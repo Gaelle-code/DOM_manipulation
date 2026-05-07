@@ -23,3 +23,6 @@ navItems.forEach(item => {
     });
 });
 
+document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('mobile-show');
+});
