@@ -7,3 +7,4 @@ document.getElementById('themeToggle').addEventListener('click', () => {
 document.getElementById('changeTextBtn').addEventListener('click', () => {
     document.getElementById('mainParagraph').innerText = "You've successfully manipulated the DOM!";
 });
+
