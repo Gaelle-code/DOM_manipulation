@@ -1,59 +1,35 @@
 :root {
-    --bg-color: #ffffff;
-    --text-color: #333;
-    --nav-bg: #f4f4f4;
+    --bg: #ffffff;
+    --text: #333;
+    --nav: #f8f9fa;
+    --card-bg: #fff;
 }
 
-.dark-mode {
-    --bg-color: #1a1a1a;
-    --text-color: #f4f4f4;
-    --nav-bg: #333;
+body.dark-mode {
+    --bg: #121212;
+    --text: #ffffff;
+    --nav: #1f1f1f;
+    --card-bg: #2a2a2a;
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
-    transition: 0.3s;
-    margin: 0;
-}
+body { background: var(--bg); color: var(--text); font-family: sans-serif; transition: 0.3s; margin: 0; }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background: var(--nav-bg);
-}
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: var(--nav); border-bottom: 1px solid #ddd; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-item { text-decoration: none; color: var(--text); }
+.active { color: #007bff; font-weight: bold; }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-}
+.dropdown-menu { display: none; position: absolute; background: var(--nav); border: 1px solid #ddd; padding: 10px; list-style: none; }
+.dropdown-menu.show { display: block; }
 
-.nav-links li { margin: 0 15px; position: relative; }
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { width: 25px; height: 3px; background: var(--text); }
 
-/* Dropdown Hidden by Default */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background: var(--nav-bg);
-    list-style: none;
-    padding: 10px;
-}
-
-.active { font-weight: bold; color: blue; }
-
-/* Responsive Hamburger (Hidden on Desktop) */
-.hamburger { display: none; cursor: pointer; }
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: var(--text-color);
-    margin: 5px;
-}
+.activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 40px; }
+.card { background: var(--card-bg); padding: 20px; border-radius: 10px; border: 1px solid #444; text-align: center; }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Hide for now, JS will toggle */
-    .hamburger { display: block; }
+    .nav-links { display: none; flex-direction: column; width: 100%; }
+    .nav-links.mobile-show { display: flex; }
+    .hamburger { display: flex; }
 }
