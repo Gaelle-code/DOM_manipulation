@@ -31,3 +31,23 @@ document.getElementById('itemInput').addEventListener('input', (e) => {
     document.getElementById('displayText').innerText = `Live Preview: ${e.target.value}`;
 });
 
+document.getElementById('addItemBtn').addEventListener('click', () => {
+    const input = document.getElementById('itemInput');
+    if (input.value.trim() !== "") {
+        const li = document.createElement('li');
+        li.innerText = input.value;
+        // Requirement 8: Element Removal
+        li.addEventListener('click', () => li.remove());
+        document.getElementById('dynamicList').appendChild(li);
+        input.value = "";
+    }
+});
+
+document.getElementById('searchInput').addEventListener('keyup', (e) => {
+    const term = e.target.value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(term) ? "block" : "none";
+    });
+});
