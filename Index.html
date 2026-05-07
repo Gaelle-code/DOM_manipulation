@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Practice - CyberWithRos</title>
-    <link rel="stylesheet" href="Index.css">
+    <title>DOM Practice | Rosine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">BuzConn Tech</div>
+        <div class="logo">DOM Explorer</div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#" class="nav-item active">Home</a></li>
             <li class="dropdown">
-                <a href="#" class="nav-item" id="servicesLink">Services ▾</a>
+                <a href="#" class="nav-item" id="servicesLink">Explore Services ▾</a>
                 <ul class="dropdown-menu" id="dropdownMenu">
-                    <li><a href="#">Cyber Security</a></li>
-                    <li><a href="#">App Dev</a></li>
+                    <li><a href="#" class="drop-item">Cyber Security</a></li>
+                    <li><a href="#" class="drop-item">App Development</a></li>
                 </ul>
             </li>
-            <li><a href="#" class="nav-item">About</a></li>
+            <li><a href="#" class="nav-item">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger">
             <span></span><span></span><span></span>
@@ -26,55 +28,65 @@
     </nav>
 
     <main>
-        <button id="themeToggle">Toggle Dark Mode</button>
+        <div class="theme-container">
+            <button id="themeToggle" title="Toggle Dark Mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+        </div>
 
-        <section class="intro">
-            <p id="mainParagraph">Welcome! This text will change when you click the button.</p>
-            <button id="changeTextBtn">Change Text</button>
+        <section class="intro-section">
+            <p id="mainParagraph">Welcome! Interact with the page to see the DOM in action.</p>
+            <button id="changeTextBtn">Update Message</button>
         </section>
 
-        <section class="input-display">
-            <input type="text" id="itemInput" placeholder="Type something to see it live...">
+        <section class="interaction-zone">
+            <div class="input-group">
+                <input type="text" id="itemInput" placeholder="Type something...">
+                <button id="addItemBtn">Add to List</button>
+            </div>
             <p id="displayText">Live Preview: </p>
-            <button id="addItemBtn">Add to List</button>
             <ul id="dynamicList"></ul>
         </section>
 
-        <section class="search-section">
+        <section class="search-area">
             <input type="text" id="searchInput" placeholder="Search activities below...">
         </section>
 
         <section class="activities-grid" id="activitiesGrid">
             <div class="card" data-name="Hiking">
+                <img src="https://images.unsplash.com/photo-1551632432-c735e7a030bc?w=400" alt="Hiking">
                 <h3>Mountain Hiking</h3>
-                <p>Explore nature.</p>
+                <p>Breathtaking views and fresh air.</p>
                 <button class="activity-btn">Select</button>
             </div>
             <div class="card" data-name="Beach">
-                <h3>Beach Day</h3>
-                <p>Sun and sand.</p>
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400" alt="Beach">
+                <h3>Beach Relax</h3>
+                <p>Golden sands and blue water.</p>
                 <button class="activity-btn">Select</button>
             </div>
             <div class="card" data-name="Coding">
-                <h3>Coding Session</h3>
-                <p>Build something cool.</p>
+                <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400" alt="Coding">
+                <h3>Code Session</h3>
+                <p>Build the future with logic.</p>
                 <button class="activity-btn">Select</button>
             </div>
             <div class="card" data-name="Gaming">
-                <h3>Gaming Night</h3>
-                <p>Level up your skills.</p>
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400" alt="Gaming">
+                <h3>Gaming Arena</h3>
+                <p>Competitive fun with friends.</p>
                 <button class="activity-btn">Select</button>
             </div>
         </section>
 
-        <section class="selected-activities">
-            <h3>Your Selected Items:</h3>
+        <section class="results-panel">
+            <h3>Selected Itinerary:</h3>
             <ul id="itineraryList"></ul>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 DOM Practice Assignment</p>
+    <footer class="footer">
+        <p>&copy; 2026 DOM Practice Assignment </p>
     </footer>
 
     <script src="script.js"></script>
