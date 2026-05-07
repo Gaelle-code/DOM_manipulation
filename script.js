@@ -26,3 +26,8 @@ navItems.forEach(item => {
 document.getElementById('hamburger').addEventListener('click', () => {
     document.getElementById('navLinks').classList.toggle('mobile-show');
 });
+
+document.getElementById('itemInput').addEventListener('input', (e) => {
+    document.getElementById('displayText').innerText = `Live Preview: ${e.target.value}`;
+});
+
